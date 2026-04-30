@@ -1,0 +1,15 @@
+a {
+  position: relative; /* Essential for positioning the pseudo-element */
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  /* Expand the hitbox by 20px in all directions */
+  top: -20px;
+  bottom: -20px;
+  left: -20px;
+  right: -20px;
+  /* Ensures it stays above the element but remains invisible */
+  cursor: pointer;
+}

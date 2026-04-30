@@ -8,10 +8,19 @@ import { RouterLink } from '@angular/router';
   //templateUrl: './root.html',
   styleUrl: './root.css',
   template: `
-    <div class="border border-green-50 w-full h-screen">
-      <a [routerLink]="['/home']" class="text-white"> home</a>
-      <a [routerLink]="['/about']" class="text-white"> about</a>
-      <a [routerLink]="['/hire/page1']" class="text-white"> hire</a>
+    <div class="flex border border-green-50 w-full h-screen">
+      <a [routerLink]="['/home']" class="text-white">
+        <img src="folder.svg" />
+        <p>home</p>
+      </a>
+      <a [routerLink]="['/about']" class="text-white">
+        <img src="folder.svg" />
+        <p>about</p>
+      </a>
+      <a [routerLink]="['/hire/page1']" class="text-white">
+        <img src="folder.svg" />
+        <p>hire</p>
+      </a>
     </div>
   `,
 })
