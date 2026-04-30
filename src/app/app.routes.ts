@@ -12,7 +12,6 @@ import { Page2 } from './pages/hire/form/page2/page2';
 
 export const routes: Routes = [
   { path: '', component: Root },
-  { path: 'help', component: Root },
 
   { path: 'home', component: Home },
   { path: 'about', component: About },
