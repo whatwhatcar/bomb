@@ -30,10 +30,23 @@ export class NavbarManager {
         for (const segment of segments) {
           accumulated += '/' + segment;
 
-          items.push({
-            label: segment,
-            url: accumulated,
-          });
+          // url path: /hire/application/page
+
+          //prevent it from going anywhere, stays on the same application page
+          // example: if on page 2 will stay on page 2, does not go back to page 1 or /application
+          if (segment === 'application') {
+            items.push({
+              label: segment,
+              url: this.router.url,
+            });
+          }
+          //default behavior
+          else {
+            items.push({
+              label: segment,
+              url: accumulated,
+            });
+          }
 
           if (segment === 'application') {
             break; // stop adding more
