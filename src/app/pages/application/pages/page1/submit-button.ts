@@ -1,5 +1,5 @@
 import { Directive, inject } from '@angular/core';
-import { JobForm } from '../../form/job-form';
+import { JobForm } from '../../job-form';
 
 @Directive({
   selector: '[submit-button]',
