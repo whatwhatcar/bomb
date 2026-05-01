@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormField } from '@angular/forms/signals';
 
-import { JobForm } from '../job-form';
+import { JobForm } from '../../job-form';
 
 import { Submit } from './submit-button';
 
