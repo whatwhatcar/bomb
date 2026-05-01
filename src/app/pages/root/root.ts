@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
         <img src="folder.svg" />
         <p>about</p>
       </a>
-      <a [routerLink]="['/hire/page1']" class="text-white">
+      <a [routerLink]="['/hire']" class="text-white">
         <img src="folder.svg" />
         <p>hire</p>
       </a>

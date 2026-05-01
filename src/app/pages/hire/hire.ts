@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hire',
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterLink],
   //templateUrl: './hire.html',
   styleUrl: './hire.css',
   template: `
@@ -16,7 +16,7 @@ import { RouterOutlet, RouterLink } from '@angular/router';
         To being your application process, please click the link below.
       </p>
 
-      <a routerLink="/hire/page1" class="text-white">click here!</a>
+      <a routerLink="/hire/application" class="text-white">click here!</a>
     </div>
   `,
 })
