@@ -34,6 +34,10 @@ export class NavbarManager {
             label: segment,
             url: accumulated,
           });
+
+          if (segment === 'application') {
+            break; // stop adding more
+          }
         }
 
         console.log(items);
