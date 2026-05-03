@@ -1,0 +1,9 @@
+.reusable-input {
+  border-bottom: 1px solid black;
+  min-width: 0;
+  flex: 1 1 0%;
+}
+
+.cool {
+  display: flex;
+}

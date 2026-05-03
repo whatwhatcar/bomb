@@ -4,9 +4,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map } from 'rxjs';
 import { ApplicationRoutes } from './application.routes';
 
+import { Title } from './page-template/title/title';
+
 @Component({
   selector: 'app-application',
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, Title],
   templateUrl: './application.html',
 })
 export class Application {

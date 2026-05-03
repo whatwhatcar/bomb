@@ -1,28 +1,50 @@
-<h1 class="text-center">EMPLOYMENT / JOB APPLICATION</h1>
+<app-section header="ACCOUNT INFORMATION"></app-section>
 
-<h2 class="flex justify-center items-center border-b border-black border bg-blue-200 h-10">
-  ACCOUNT INFORMATION
-</h2>
+<form onsubmit="return false;">
+  <fieldset class="flex flex-col">
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      [formField]="job_form.application_form.username"
+      class="reusable-input"
+    />
 
-<form onsubmit="return false;" class="flex flex-col">
-  <label for="username">Username:</label>
-  <input
-    type="text"
-    id="username"
-    [formField]="job_form.application_form.username"
-    class="border-b border-black min-w-0 flex-1"
-  />
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      [formField]="job_form.application_form.password"
+      class="reusable-input"
+    />
 
-  <label for="password">Password:</label>
-  <input
-    type="password"
-    id="password"
-    [formField]="job_form.application_form.password"
-    class="border-b border-black min-w-0 flex-1"
-  />
+    <p>{{ job_form.message }}</p>
+    <div class="flex justify-around">
+      <input type="reset" value="reset" />
 
-  <p>{{ job_form.message }}</p>
-  <input submit-button type="submit" />
+      <input submit-button type="submit" value="submit" />
+    </div>
+  </fieldset>
+
+  <app-section header="FUN QUESTIONS"></app-section>
+
+  <fieldset>
+    <legend>have you committed a felony?</legend>
+
+    <input type="radio" id="felony-yes" name="felony" value="yes" class="" />
+    <label for="felony-yes">yes</label>
+
+    <input type="radio" id="felony-no" name="felony" value="no" class="" />
+    <label for="felony-no">no</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>what is your favorite fruits</legend>
+
+    <input type="checkbox" name="fruit" value="apple" class="" />
+    <label for="apple">apple</label>
+
+    <input type="checkbox" name="fruit" value="banana" class="" />
+    <label for="banana">banana</label>
+  </fieldset>
 </form>
-
-<app-title [title]="title"></app-title>

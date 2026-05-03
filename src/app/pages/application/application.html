@@ -1,22 +1,29 @@
-<div class="w-full h-screen bg-white">
-  <router-outlet />
+<div class="w-full h-screen relative bg-white max-w-3xl mx-auto">
+  <div class="max-w-2xl mx-auto px-4">
+    <app-title class="m-8"></app-title>
+    <router-outlet></router-outlet>
+  </div>
 
-  <div class="flex gap-4">
-    <a
-      [routerLink]="prevPage() ? [prevPage()] : null"
-      [replaceUrl]="true"
-      [class.pointer-events-none]="!prevPage()"
-      [attr.aria-disabled]="!prevPage()"
-      >back</a
-    >
+  <div class="absolute bottom-0 w-full px-4 pb-4">
+    <div class="flex items-center justify-between">
+      <a
+        [routerLink]="prevPage() ? [prevPage()] : null"
+        [replaceUrl]="true"
+        [class.pointer-events-none]="!prevPage()"
+        [attr.aria-disabled]="!prevPage()"
+        >back</a
+      >
 
-    <a
-      [routerLink]="nextPage() ? [nextPage()] : null"
-      [replaceUrl]="true"
-      [class.pointer-events-none]="!nextPage()"
-      [attr.aria-disabled]="!nextPage()"
-    >
-      next</a
-    >
+      <div>page {{'1'}} of {{'4'}}</div>
+
+      <a
+        [routerLink]="nextPage() ? [nextPage()] : null"
+        [replaceUrl]="true"
+        [class.pointer-events-none]="!nextPage()"
+        [attr.aria-disabled]="!nextPage()"
+      >
+        next</a
+      >
+    </div>
   </div>
 </div>
