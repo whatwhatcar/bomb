@@ -1,10 +1,10 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { form, required } from '@angular/forms/signals';
 
-import { AccountInfo, AccountDefault } from './form-info/account-info';
-import { FelonyInfo, FelonyDefault } from './form-info/felony-info';
-import { FruitInfo, FruitDefault } from './form-info/fruit-info';
-import { CountryInfo, CountryDefault } from './form-info/country-info';
+import { AccountInfo, AccountDefault } from './info/account';
+import { FelonyInfo, FelonyDefault } from './info/felony';
+import { FruitInfo, FruitDefault } from './info/fruit';
+import { CountryInfo, CountryDefault } from './info/country';
 
 @Injectable({
   providedIn: 'root',

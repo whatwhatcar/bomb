@@ -6,4 +6,4 @@ export interface FruitInfo {
 export const FruitDefault: FruitInfo = {
   apple: false,
   banana: false,
-} as const;
+};

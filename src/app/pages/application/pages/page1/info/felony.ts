@@ -1,5 +1,5 @@
 export interface FelonyInfo {
-  felony: string;
+  felony: 'yes' | 'no' | '';
 }
 
 export const FelonyDefault: FelonyInfo = {

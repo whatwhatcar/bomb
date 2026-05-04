@@ -1,1 +1,68 @@
-<app-section header="section"></app-section>
+<app-title></app-title>
+
+<app-section header="ACCOUNT INFORMATION"></app-section>
+
+<form onsubmit="return false;">
+  <fieldset>
+    <legend>work pressure?</legend>
+    <input
+      type="radio"
+      value="true"
+      id="work-pressure-yes"
+      [formField]="page_service.work_pressure_form.work_pressure"
+      class=""
+    />
+    <label for="work-pressure-yes">yes</label>
+    <input
+      type="radio"
+      value="false"
+      id="work-pressure-no"
+      [formField]="page_service.work_pressure_form.work_pressure"
+      class=""
+    />
+    <label for="work-pressure-no">no</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>alpha male?</legend>
+    <input
+      type="radio"
+      value="true"
+      id="alpha-male-yes"
+      [formField]="page_service.alpha_male_form.alpha_male"
+      class=""
+    />
+    <label for="alpha-male-yes">yes</label>
+    <input
+      type="radio"
+      value="false"
+      id="alpha-male-no"
+      [formField]="page_service.alpha_male_form.alpha_male"
+      class=""
+    />
+    <label for="alpha-male-no">no</label>
+
+    <fieldset [hidden]="!(page_service.alpha_male_form.alpha_male().value()==='true')">
+      <legend>omg im a big fan of you chad</legend>
+      <input
+        type="checkbox"
+        id="alpha-male-pretentious"
+        [formField]="page_service.alpha_male_form.pretentious"
+        class=""
+      />
+      <label for="alpha-male-pretentious">banana</label>
+      <input
+        type="checkbox"
+        id="alpha-male-leader"
+        [formField]="page_service.alpha_male_form.leader"
+        class=""
+      />
+      <label for="alpha-male-leader">apple</label>
+    </fieldset>
+
+    <fieldset [hidden]="!(page_service.alpha_male_form.alpha_male().value()==='false')">
+      <label for="alpha-male-no">then please explain why that you dont get bitches</label>
+      <textarea rows="4" cols="50">loser</textarea>
+    </fieldset>
+  </fieldset>
+</form>

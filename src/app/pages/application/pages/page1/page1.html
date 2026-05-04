@@ -8,22 +8,31 @@
     <input
       type="text"
       id="username"
-      [formField]="page_signal.account_form.username"
+      [formField]="page_service.account_form.username"
       class="reusable-input"
     />
+
+    @if (page_service.account_form.username().touched() &&
+    page_service.account_form.username().invalid()) {
+    <ul class="error-list">
+      @for (error of page_service.account_form.username().errors(); track error) {
+      <li class="text-red-500">{{ error.message }}</li>
+      }
+    </ul>
+    }
 
     <label for="password">Password:</label>
     <input
       type="password"
       id="password"
-      [formField]="page_signal.account_form.password"
+      [formField]="page_service.account_form.password"
       class="reusable-input"
     />
 
-    <p>{{ page_signal.message }}</p>
+    <p>{{ page_service.message }}</p>
     <div class="flex justify-around">
-      <button (click)="page_signal.reset()">reset</button>
-      <button (click)="page_signal.click()">submit</button>
+      <button (click)="page_service.reset()">reset</button>
+      <button (click)="page_service.click()">submit</button>
     </div>
   </fieldset>
 
@@ -35,7 +44,7 @@
       type="radio"
       value="true"
       id="felony-yes"
-      [formField]="page_signal.felony_form.felony"
+      [formField]="page_service.felony_form.felony"
       class=""
     />
     <label for="felony-yes">yes</label>
@@ -43,7 +52,7 @@
       type="radio"
       value="false"
       id="felony-no"
-      [formField]="page_signal.felony_form.felony"
+      [formField]="page_service.felony_form.felony"
       class=""
     />
     <label for="felony-no">no</label>
@@ -51,25 +60,25 @@
 
   <fieldset>
     <legend>what is your favorite fruits</legend>
-    <input type="checkbox" id="fruit-apple" [formField]="page_signal.fruit_form.apple" class="" />
+    <input type="checkbox" id="fruit-apple" [formField]="page_service.fruit_form.apple" class="" />
     <label for="fruit-apple">apple</label>
-    <input type="checkbox" id="fruit-banana" [formField]="page_signal.fruit_form.banana" class="" />
+    <input
+      type="checkbox"
+      id="fruit-banana"
+      [formField]="page_service.fruit_form.banana"
+      class=""
+    />
     <label for="fruit-banana">banana</label>
   </fieldset>
 
   <fieldset>
-    <legend>which country do you come from?</legend>
+    <legend>Which country do you come from?</legend>
     <select>
-      <option value="" disabled selected>Select a country</option>
-      <option value="ca">Canada</option>
-      <option value="us">United States</option>
-      <option value="mx">Mexico</option>
+      <option selected disabled value="">Select</option>
+      @for (country of country_info; track country.code) {
+      <option [value]="country.code">{{ country.name }}</option>
+      }
     </select>
-  </fieldset>
-
-  <fieldset [hidden]="page_signal.fruit_form.banana().value()">
-    <legend>what are your qualifications:</legend>
-    <textarea name="message" id="message" rows="6" cols="50"></textarea>
   </fieldset>
 
   <button (click)="app_form.submit()">submit</button>
