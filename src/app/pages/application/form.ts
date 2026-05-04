@@ -8,6 +8,6 @@ export class ApplicationForm {
   page1 = inject(Page1Service);
 
   submit() {
-    alert(this.page1.ok());
+    alert(this.page1.account_form.username().value());
   }
 }

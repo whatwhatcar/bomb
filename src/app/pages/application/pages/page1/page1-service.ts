@@ -12,20 +12,20 @@ import { CountryInfo, CountryDefault } from './info/country';
 export class Page1Service {
   message = 'please enter password';
 
-  account_model = signal<AccountInfo>(AccountDefault);
-  account_form = form(this.account_model, (schemePath) => {
+  private account_model = signal<AccountInfo>(AccountDefault);
+  public account_form = form(this.account_model, (schemePath) => {
     required(schemePath.username, { message: 'username is required' });
     required(schemePath.password, { message: 'password is required' });
   });
 
-  felony_model = signal<FelonyInfo>(FelonyDefault);
-  felony_form = form(this.felony_model);
+  private felony_model = signal<FelonyInfo>(FelonyDefault);
+  public felony_form = form(this.felony_model);
 
-  fruit_model = signal<FruitInfo>(FruitDefault);
-  fruit_form = form(this.fruit_model);
+  private fruit_model = signal<FruitInfo>(FruitDefault);
+  public fruit_form = form(this.fruit_model);
 
-  country_model = signal<CountryInfo>(CountryDefault);
-  country_form = form(this.country_model);
+  private country_model = signal<CountryInfo>(CountryDefault);
+  public country_form = form(this.country_model);
 
   ok = computed(() => this.account_form().valid() && this.account_form().dirty());
 
@@ -33,5 +33,7 @@ export class Page1Service {
     this.account_form().reset(AccountDefault);
   }
 
-  click() {}
+  click() {
+    alert(this.account_form.username().value());
+  }
 }
