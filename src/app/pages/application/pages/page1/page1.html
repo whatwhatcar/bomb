@@ -1,3 +1,5 @@
+<app-title></app-title>
+
 <app-section header="ACCOUNT INFORMATION"></app-section>
 
 <form onsubmit="return false;">
@@ -6,7 +8,7 @@
     <input
       type="text"
       id="username"
-      [formField]="job_form.application_form.username"
+      [formField]="page_signal.account_form.username"
       class="reusable-input"
     />
 
@@ -14,14 +16,14 @@
     <input
       type="password"
       id="password"
-      [formField]="job_form.application_form.password"
+      [formField]="page_signal.account_form.password"
       class="reusable-input"
     />
 
-    <p>{{ job_form.message }}</p>
+    <p>{{ page_signal.message }}</p>
     <div class="flex justify-around">
-      <button (click)="job_form.reset()">reset</button>
-      <button (click)="job_form.click()">submit</button>
+      <button (click)="page_signal.reset()">reset</button>
+      <button (click)="page_signal.click()">submit</button>
     </div>
   </fieldset>
 
@@ -33,7 +35,7 @@
       type="radio"
       value="true"
       id="felony-yes"
-      [formField]="job_form.felony_form.felony"
+      [formField]="page_signal.felony_form.felony"
       class=""
     />
     <label for="felony-yes">yes</label>
@@ -41,7 +43,7 @@
       type="radio"
       value="false"
       id="felony-no"
-      [formField]="job_form.felony_form.felony"
+      [formField]="page_signal.felony_form.felony"
       class=""
     />
     <label for="felony-no">no</label>
@@ -49,9 +51,9 @@
 
   <fieldset>
     <legend>what is your favorite fruits</legend>
-    <input type="checkbox" id="fruit-apple" [formField]="job_form.fruit_form.apple" class="" />
+    <input type="checkbox" id="fruit-apple" [formField]="page_signal.fruit_form.apple" class="" />
     <label for="fruit-apple">apple</label>
-    <input type="checkbox" id="fruit-banana" [formField]="job_form.fruit_form.banana" class="" />
+    <input type="checkbox" id="fruit-banana" [formField]="page_signal.fruit_form.banana" class="" />
     <label for="fruit-banana">banana</label>
   </fieldset>
 
@@ -65,8 +67,10 @@
     </select>
   </fieldset>
 
-  <fieldset [hidden]="job_form.fruit_form.banana().value()">
+  <fieldset [hidden]="page_signal.fruit_form.banana().value()">
     <legend>what are your qualifications:</legend>
     <textarea name="message" id="message" rows="6" cols="50"></textarea>
   </fieldset>
+
+  <button (click)="app_form.submit()">submit</button>
 </form>

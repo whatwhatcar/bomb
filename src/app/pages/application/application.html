@@ -1,6 +1,5 @@
 <div class="w-full h-screen relative bg-white max-w-3xl mx-auto">
-  <div class="max-w-2xl mx-auto px-4">
-    <app-title class="m-8"></app-title>
+  <div class="max-w-2xl mx-auto px-4 my-auto py-8">
     <router-outlet></router-outlet>
   </div>
 
@@ -14,8 +13,7 @@
         >back</a
       >
 
-      <div>page {{'1'}} of {{'4'}}</div>
-
+      <div>page {{ pages.indexOf(currentPage()) + 1 }} of {{ pages.length }}</div>
       <a
         [routerLink]="nextPage() ? [nextPage()] : null"
         [replaceUrl]="true"

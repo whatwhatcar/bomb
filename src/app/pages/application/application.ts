@@ -4,17 +4,15 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map } from 'rxjs';
 import { ApplicationRoutes } from './application.routes';
 
-import { Title } from './page-template/title/title';
-
 @Component({
   selector: 'app-application',
-  imports: [RouterOutlet, RouterLink, Title],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './application.html',
 })
 export class Application {
   private router = inject(Router);
 
-  private pages = ApplicationRoutes.filter((r) => r.path && r.path !== '**' && r.path !== '').map(
+  pages = ApplicationRoutes.filter((r) => r.path && r.path !== '**' && r.path !== '').map(
     (r) => r.path as string,
   );
 

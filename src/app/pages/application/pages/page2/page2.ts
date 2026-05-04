@@ -2,7 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { FormField } from '@angular/forms/signals';
 
 import { Section } from '../../page-template/section/section';
-import { JobForm } from '../../job-form';
+import { ApplicationForm } from '../../form';
 
 @Component({
   selector: 'app-page2',
@@ -11,5 +11,5 @@ import { JobForm } from '../../job-form';
   styleUrl: './page2.css',
 })
 export class Page2 {
-  job_form = inject(JobForm);
+  app_form = inject(ApplicationForm);
 }

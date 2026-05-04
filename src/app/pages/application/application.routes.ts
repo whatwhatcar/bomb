@@ -8,6 +8,4 @@ export const ApplicationRoutes: Routes = [
   { path: '1', component: Page1 },
   { path: '2', component: Page2 },
   { path: '3', component: Page3 },
-
-  // { path: '**', component: Page1 }, //if invalid page: then go to page 1
 ];
