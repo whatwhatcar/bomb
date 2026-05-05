@@ -1,5 +1,5 @@
 export interface AlphaMaleInfo {
-  alpha_male: 'yes' | 'no' | '';
+  alpha_male: 'true' | 'false' | '';
 
   leader: boolean;
   cynical: boolean;
