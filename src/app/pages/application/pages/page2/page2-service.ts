@@ -13,4 +13,8 @@ export class Page2Service {
 
   alpha_male_model = signal<AlphaMaleInfo>(AlphaMaleDefault);
   alpha_male_form = form(this.alpha_male_model);
+
+  clear() {
+    this.alpha_male_form().reset(AlphaMaleDefault);
+  }
 }

@@ -42,6 +42,8 @@
     />
     <label for="alpha-male-no">no</label>
 
+    <button (click)="page_service.clear()">clear</button>
+
     <fieldset [hidden]="!(page_service.alpha_male_form.alpha_male().value()==='true')">
       <legend>omg im a big fan of you chad</legend>
 
