@@ -44,25 +44,56 @@
 
     <fieldset [hidden]="!(page_service.alpha_male_form.alpha_male().value()==='true')">
       <legend>omg im a big fan of you chad</legend>
-      <input
-        type="checkbox"
-        id="alpha-male-pretentious"
-        [formField]="page_service.alpha_male_form.pretentious"
-        class=""
-      />
-      <label for="alpha-male-pretentious">banana</label>
+
       <input
         type="checkbox"
         id="alpha-male-leader"
         [formField]="page_service.alpha_male_form.leader"
         class=""
       />
-      <label for="alpha-male-leader">apple</label>
-    </fieldset>
+      <label for="alpha-male-leader">leader</label>
 
-    <fieldset [hidden]="!(page_service.alpha_male_form.alpha_male().value()==='false')">
-      <label for="alpha-male-no">then please explain why that you dont get bitches</label>
-      <textarea rows="4" cols="50">loser</textarea>
+      <input
+        type="checkbox"
+        id="alpha-male-pretentious"
+        [formField]="page_service.alpha_male_form.pretentious"
+        class=""
+      />
+      <label for="alpha-male-pretentious">pretentious</label>
+
+      <input
+        type="checkbox"
+        id="alpha-male-narcissist"
+        [formField]="page_service.alpha_male_form.narcissist"
+        class=""
+      />
+      <label for="alpha-male-narcissist">narcissist</label>
+
+      <input
+        type="checkbox"
+        id="alpha-male-manipulative"
+        [formField]="page_service.alpha_male_form.manipulative"
+        class=""
+      />
+      <label for="alpha-male-manipulative">manipulative</label>
+
+      <input
+        type="checkbox"
+        id="alpha-male-misogynistic"
+        [formField]="page_service.alpha_male_form.misogynistic"
+        class=""
+      />
+      <label for="alpha-male-misogynistic">misogynistic</label>
     </fieldset>
+  </fieldset>
+
+  <fieldset [hidden]="!(page_service.alpha_male_form.alpha_male().value()==='false')">
+    <legend>then please explain why that you dont get bitches</legend>
+    <textarea rows="4" cols="50">loser</textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>could you get along with co workers</legend>
+    <textarea rows="4" cols="50">explain</textarea>
   </fieldset>
 </form>

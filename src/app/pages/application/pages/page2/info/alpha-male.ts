@@ -1,8 +1,12 @@
 export interface AlphaMaleInfo {
   alpha_male: 'true' | 'false' | '';
 
-  pretentious: boolean;
   leader: boolean;
+  cynical: boolean;
+  pretentious: boolean;
+  narcissist: boolean;
+  manipulative: boolean;
+  misogynistic: boolean;
 
   reason: string;
 }
@@ -10,8 +14,12 @@ export interface AlphaMaleInfo {
 export const AlphaMaleDefault: AlphaMaleInfo = {
   alpha_male: '',
 
-  pretentious: false,
   leader: false,
+  cynical: false,
+  pretentious: false,
+  narcissist: false,
+  manipulative: false,
+  misogynistic: false,
 
   reason: '',
 };

@@ -1,13 +1,17 @@
-import { Injectable, inject } from '@angular/core';
-import { Page1Service } from './pages/page1/page1-service';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApplicationForm {
-  page1 = inject(Page1Service);
+  //array of pages
+
+  message = 'hi';
+  add() {
+    //add to pages
+  }
 
   submit() {
-    alert(this.page1.account_form.username().value());
+    //check pages if valid
   }
 }

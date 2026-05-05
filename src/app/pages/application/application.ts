@@ -1,7 +1,5 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject, computed, signal } from '@angular/core';
 import { Router, RouterLink, RouterOutlet, NavigationEnd } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map } from 'rxjs';
 import { ApplicationRoutes } from './application.routes';
 
 @Component({
@@ -16,13 +14,15 @@ export class Application {
     (r) => r.path as string,
   );
 
-  private currentUrl = toSignal(
-    this.router.events.pipe(
-      filter((e) => e instanceof NavigationEnd),
-      map(() => this.router.url),
-    ),
-    { initialValue: this.router.url },
-  );
+  private currentUrl = signal(this.router.url);
+
+  constructor() {
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        this.currentUrl.set(this.router.url);
+      }
+    });
+  }
 
   currentPage = computed(() => {
     const segments = this.currentUrl().split('/');

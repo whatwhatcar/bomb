@@ -1,4 +1,4 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, inject, signal, computed } from '@angular/core';
 import { form, required } from '@angular/forms/signals';
 
 import { AccountInfo, AccountDefault } from './info/account';
@@ -6,10 +6,13 @@ import { FelonyInfo, FelonyDefault } from './info/felony';
 import { FruitInfo, FruitDefault } from './info/fruit';
 import { CountryInfo, CountryDefault } from './info/country';
 
+import { ApplicationForm } from '../../form';
+
 @Injectable({
   providedIn: 'root',
 })
 export class Page1Service {
+  app_form = inject(ApplicationForm);
   message = 'please enter password';
 
   private account_model = signal<AccountInfo>(AccountDefault);
@@ -33,7 +36,11 @@ export class Page1Service {
     this.account_form().reset(AccountDefault);
   }
 
-  click() {
-    alert(this.account_form.username().value());
+  submit() {
+    alert(this.account_form.password().value());
+  }
+
+  constructor() {
+    this.app_form.add();
   }
 }
